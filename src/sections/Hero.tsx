@@ -7,10 +7,10 @@ const Hero: React.FC = () => (
 	>
 		<div className="text-center max-w-3xl mx-auto">
 			<h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 leading-tight">
-				Hi, I'm [Your Name]
+				Hi, I'm Jacky Chen
 			</h1>
 			<p className="text-lg sm:text-xl md:text-2xl mt-4 text-gray-600 max-w-xl mx-auto">
-				A [Your Profession] with a passion for building things.
+				A software engineer with over 1.5 years of experience in web development.
 			</p>
 			<Button
 				type="primary"

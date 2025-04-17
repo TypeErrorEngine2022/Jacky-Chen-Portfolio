@@ -1,4 +1,21 @@
-import { Card, Timeline } from "antd";
+import { Card, Tag, Timeline } from "antd";
+
+const AtgWorkingExperience = () => (
+	<div>
+		<h3 className="text-xl font-semibold">
+			Part-time Software Developer @ Applied Technology Group Limited
+		</h3>
+		<p className="text-gray-600">Jun 2023 - Present</p>
+		<ol className="mt-2 text-gray-700 list-disc">
+			<li>Revamp over 20 Vue components to React with documented QA</li>
+			<li>Took the initiative to develop a swagger compare tool to facilitate API upgrades</li>
+			<li>Upgrade over 50 API endpoints with detailed changelog</li>
+			<li>
+				Design and implement printable pagination of 10 different financial documents using React
+			</li>
+		</ol>
+	</div>
+);
 
 const WorkExperience: React.FC = () => (
 	<section id="work" className="py-12 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto">
@@ -11,47 +28,20 @@ const WorkExperience: React.FC = () => (
 				mode="left"
 				items={[
 					{
-						children: (
-							<div>
-								<h3 className="text-xl font-semibold">Job Title @ Company</h3>
-								<p className="text-gray-600">Month Year - Present</p>
-								<p className="mt-2 text-gray-700">
-									Brief description of responsibilities and achievements.
-								</p>
-							</div>
-						),
+						children: <AtgWorkingExperience />,
 						label: "Present",
-					},
-					{
-						children: (
-							<div>
-								<h3 className="text-xl font-semibold">Previous Job Title @ Company</h3>
-								<p className="text-gray-600">Month Year - Month Year</p>
-								<p className="mt-2 text-gray-700">
-									Brief description of responsibilities and achievements.
-								</p>
-							</div>
-						),
-						label: "2022",
+						color: "green",
 					},
 				]}
 			/>
 		</div>
 
 		<div className="md:hidden space-y-4">
-			<Card className="w-full">
-				<h3 className="text-xl font-semibold">Job Title @ Company</h3>
-				<p className="text-gray-600">Month Year - Present</p>
-				<p className="mt-2 text-gray-700">
-					Brief description of responsibilities and achievements.
-				</p>
-			</Card>
-			<Card className="w-full">
-				<h3 className="text-xl font-semibold">Previous Job Title @ Company</h3>
-				<p className="text-gray-600">Month Year - Month Year</p>
-				<p className="mt-2 text-gray-700">
-					Brief description of responsibilities and achievements.
-				</p>
+			<Card className="w-full border-l-4 border-green-500">
+				<Tag color="green" className="mb-2">
+					Present
+				</Tag>
+				<AtgWorkingExperience />
 			</Card>
 		</div>
 	</section>
