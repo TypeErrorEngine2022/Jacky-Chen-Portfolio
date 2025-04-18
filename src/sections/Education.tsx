@@ -17,7 +17,7 @@ const Education: React.FC = () => (
 					</h4>
 				</div>
 				<p className="text-gray-600">Aug 2021 – Jul 2025 (Expected)</p>
-				<p className="text-gray-700">CGPA: 3.7 / 4.00</p>
+				<p className="text-gray-700">CGPA: 3.7 / 4.0</p>
 				<div className="mt-2">
 					<p className="font-medium text-gray-700">Relevant courses taken:</p>
 					<p className="text-gray-700">
