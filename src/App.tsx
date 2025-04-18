@@ -20,7 +20,7 @@ const App: React.FC = () => (
 		<Header />
 		<Content
 			className="w-full max-w-[100dvw] pt-[var(--header-height)] overflow-x-hidden scroll-smooth"
-			style={{ scrollPaddingTop: "calc(var(--header-height) + 1rem)" }}
+			style={{ scrollPaddingTop: "calc(var(--header-height) + 1rem)" }} // must override scroll-padding-top in styl
 		>
 			<Hero />
 			<About />
