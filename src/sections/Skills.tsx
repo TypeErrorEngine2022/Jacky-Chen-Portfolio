@@ -30,6 +30,7 @@ import {
 	SiLinux,
 	SiElectron,
 	SiJira,
+	SiFigma,
 } from "react-icons/si";
 
 const Skills: React.FC = () => {
@@ -54,7 +55,7 @@ const Skills: React.FC = () => {
 		},
 		{
 			title: "Intermediate (1-2 years)",
-			skills: ["Node.js", "C++", "C", "Java"],
+			skills: ["Node.js", "C++", "C", "Java", "Linux"],
 			bgColor: "bg-green-50",
 			borderColor: "border-green-300",
 		},
@@ -70,7 +71,7 @@ const Skills: React.FC = () => {
 				"Kotlin",
 				"PostgreSQL",
 				"MongoDB",
-				"Linux",
+				"Figma",
 				"Electron",
 				"AWS",
 			],
@@ -115,6 +116,7 @@ const Skills: React.FC = () => {
 		Electron: SiElectron,
 		AWS: FaAws,
 		Jira: SiJira,
+		Figma: SiFigma,
 	};
 
 	const getSkillIcon = (skill: string) => {
