@@ -1,4 +1,4 @@
-import { Menu } from "antd";
+import { Col, Menu, Row } from "antd";
 import { useState, useEffect } from "react";
 import { MenuOutlined } from "@ant-design/icons";
 
@@ -62,47 +62,55 @@ const Header: React.FC = () => {
 				scrolled ? "shadow-md" : ""
 			}`}
 		>
-			<div className="px-12 py-4 flex items-center justify-between">
-				<div className="text-2xl font-bold mr-5 w-max flex-grow">Jacky Chen</div>
-				{/* Mobile Menu Toggle */}
-				<div className="menu-toggle sm:hidden">
-					<MenuOutlined onClick={toggleMenu} className="text-2xl cursor-pointer" />
-				</div>
+			<Row className="px-12 py-4" justify="space-between" align="middle">
+				<Col flex="auto">
+					<div className="text-2xl font-bold">Jacky Chen</div>
+				</Col>
 
 				{/* Desktop Menu */}
-				<div className="w-fit hidden sm:flex">
+				<Col xs={0} sm={8}>
 					<Menu
-						className="w-fit"
 						mode="horizontal"
 						items={headerItems.map((item) => ({
 							key: item.key,
 							label: <a href={item.href}>{item.label}</a>,
 						}))}
 					/>
-				</div>
+				</Col>
 
-				{/* Mobile Menu Dropdown */}
-				{!collapsed && (
-					<div className="fixed inset-0 bg-white z-50 flex flex-col mobile-menu">
-						<div className="px-12 py-4 flex items-center justify-between border-b border-slate-200">
-							<div className="text-2xl font-bold mr-5">Jacky Chen</div>
+				{/* Mobile Menu Toggle - positioned in the same place as desktop menu */}
+				<Col className="menu-toggle flex justify-end" xs={2} sm={0}>
+					<MenuOutlined onClick={toggleMenu} className="text-2xl cursor-pointer" />
+				</Col>
+			</Row>
+
+			{/* Mobile Menu Dropdown */}
+			{!collapsed && (
+				<div className="fixed inset-0 bg-white z-50 flex flex-col mobile-menu">
+					<Row className="px-12 py-4" justify="space-between" align="middle">
+						<Col flex="auto">
+							<div className="text-2xl font-bold">Jacky Chen</div>
+						</Col>
+
+						{/* Mobile Menu Toggle - positioned in the same place as desktop menu */}
+						<Col className="menu-toggle flex justify-end" xs={2} sm={0}>
 							<MenuOutlined onClick={toggleMenu} className="text-2xl cursor-pointer" />
-						</div>
-						<div className="flex flex-col justify-evenly h-full items-center pt-4 pb-16">
-							{headerItems.map((item) => (
-								<a
-									key={item.key}
-									href={item.href}
-									onClick={toggleMenu}
-									className="text-2xl py-4 hover:text-blue-500 transition-colors"
-								>
-									{item.label}
-								</a>
-							))}
-						</div>
+						</Col>
+					</Row>
+					<div className="flex flex-col justify-evenly h-full items-center pt-4 pb-16">
+						{headerItems.map((item) => (
+							<a
+								key={item.key}
+								href={item.href}
+								onClick={toggleMenu}
+								className="text-2xl py-4 hover:text-blue-500 transition-colors"
+							>
+								{item.label}
+							</a>
+						))}
 					</div>
-				)}
-			</div>
+				</div>
+			)}
 		</nav>
 	);
 };
