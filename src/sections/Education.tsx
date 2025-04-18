@@ -12,9 +12,7 @@ const Education: React.FC = () => (
 			<div>
 				<div className="flex flex-col md:flex-row md:justify-between md:items-center">
 					<h3 className="text-xl font-semibold">Bachelor of Science in Computer Science</h3>
-					<h4 className="text-lg font-medium mt-2 md:mt-0">
-						The Chinese University of Hong Kong (CUHK)
-					</h4>
+					<h4 className="text-md font-medium">The Chinese University of Hong Kong (CUHK)</h4>
 				</div>
 				<p className="text-gray-600">Aug 2021 – Jul 2025 (Expected)</p>
 				<p className="text-gray-700">CGPA: 3.7 / 4.0</p>

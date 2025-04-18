@@ -3,46 +3,27 @@ import { PropsWithChildren } from "react";
 import GitHubCalendar from "react-github-calendar";
 import SectionContainer from "../components/SectionContainer";
 
-const AtgPartTimeWorkingExperience = () => (
-	<div>
-		<h3 className="text-xl font-semibold">
-			Part-time Software Developer @ Applied Technology Group Limited
-		</h3>
-		<p className="text-gray-600">Sep 2023 - Present</p>
-		<ol className="mt-2 text-gray-700 list-disc">
-			<li>
-				Revamp <strong>20+</strong> Vue components to React with documented QA
-			</li>
-			<li>Took the initiative to develop a swagger compare tool to facilitate API upgrades</li>
-			<li>
-				Upgrade <strong>50+</strong> API endpoints with detailed changelog
-			</li>
-			<li>
-				Design and implement printable pagination of <strong>10</strong> different financial
-				documents using React
-			</li>
-			<li>
-				Reduced <strong>40%</strong> API calls in React through optimizing state management
-			</li>
-			<li>
-				Developed robust SignalR auto-reconnect logic, eliminating <strong>80%</strong> of user
-				interruptions
-			</li>
-		</ol>
-	</div>
-);
+interface WorkExperienceContentProps {
+	jobTitle: string;
+	company: string;
+	duration: string;
+	descriptions: React.ReactNode[];
+}
 
-const AtgInternWorkingExperience = () => (
+const WorkExperienceContent = ({
+	jobTitle,
+	company,
+	duration,
+	descriptions,
+}: WorkExperienceContentProps) => (
 	<div>
-		<h3 className="text-xl font-semibold">Intern @ Applied Technology Group Limited</h3>
-		<p className="text-gray-600">Jun 2023 - Aug 2023</p>
+		<h3 className="text-xl font-semibold">{jobTitle}</h3>
+		<p className="text-gray-600">{company}</p>
+		<p className="text-gray-600">{duration}</p>
 		<ol className="mt-2 text-gray-700 list-disc">
-			<li>
-				Developed a responsive and scalable periodontal chart with React in the summer internship
-			</li>
-			<li>
-				Migrated <strong>5+</strong> APIs to REST architecture using NestJS and TypeORM
-			</li>
+			{descriptions.map((desc, index) => (
+				<li key={index}>{desc}</li>
+			))}
 		</ol>
 	</div>
 );
@@ -52,11 +33,52 @@ const WorkingExperienceCard = ({
 	color,
 	isPresent,
 }: PropsWithChildren<{ color: string; isPresent?: boolean }>) => (
-	<Card className={`w-full border-l-4 border-${color}-500`}>
+	<Card className={`w-full border-${color}-500`}>
 		<Tag color={isPresent ? color : "default"}>{isPresent === true ? "Present" : "Past"}</Tag>
 		{children}
 	</Card>
 );
+
+const WorkExperienceItems: Record<string, WorkExperienceContentProps> = {
+	atgPartTime: {
+		jobTitle: "Part-time Software Developer",
+		company: "Applied Technology Group Limited",
+		duration: "Sep 2023 - Present",
+		descriptions: [
+			<span>
+				Revamp <strong>20+</strong> Vue components to React with documented QA
+			</span>,
+			<span>Took the initiative to develop a swagger compare tool to facilitate API upgrades</span>,
+			<span>
+				Upgrade <strong>50+</strong> API endpoints with detailed changelog
+			</span>,
+			<span>
+				Design and implement printable pagination of <strong>10</strong> different financial
+				documents using React
+			</span>,
+			<span>
+				Reduced <strong>40%</strong> API calls in React through optimizing state management
+			</span>,
+			<span>
+				Developed robust SignalR auto-reconnect logic, eliminating <strong>80%</strong> of user
+				interruptions
+			</span>,
+		],
+	},
+	atgIntern: {
+		jobTitle: "Intern",
+		company: "Applied Technology Group Limited",
+		duration: "Jun 2023 - Aug 2023",
+		descriptions: [
+			<span>
+				Developed a responsive and scalable periodontal chart with React in the summer internship
+			</span>,
+			<span>
+				Migrated <strong>5+</strong> APIs to REST architecture using NestJS and TypeORM
+			</span>,
+		],
+	},
+};
 
 const WorkExperience: React.FC = () => (
 	<SectionContainer id="work">
@@ -69,12 +91,12 @@ const WorkExperience: React.FC = () => (
 				mode="left"
 				items={[
 					{
-						children: <AtgPartTimeWorkingExperience />,
+						children: <WorkExperienceContent {...WorkExperienceItems.atgPartTime} />,
 						label: "Present",
 						color: "green",
 					},
 					{
-						children: <AtgInternWorkingExperience />,
+						children: <WorkExperienceContent {...WorkExperienceItems.atgIntern} />,
 						label: "Jun 2023 - Aug 2023",
 						color: "gray",
 					},
@@ -84,10 +106,10 @@ const WorkExperience: React.FC = () => (
 
 		<div className="md:hidden space-y-4">
 			<WorkingExperienceCard color="green" isPresent>
-				<AtgPartTimeWorkingExperience />
+				<WorkExperienceContent {...WorkExperienceItems.atgPartTime} />
 			</WorkingExperienceCard>
 			<WorkingExperienceCard color="gray">
-				<AtgInternWorkingExperience />
+				<WorkExperienceContent {...WorkExperienceItems.atgIntern} />
 			</WorkingExperienceCard>
 		</div>
 
