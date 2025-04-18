@@ -77,7 +77,7 @@ const Skills: React.FC = () => {
 				"React",
 				"Vue.js",
 				"Python",
-				"Java",
+				"Git",
 				"Next.js",
 				"Ant Design",
 			],
@@ -86,7 +86,7 @@ const Skills: React.FC = () => {
 		},
 		{
 			title: "Intermediate (1-2 years)",
-			skills: ["Node.js", "C++", "C", "Git"],
+			skills: ["Node.js", "C++", "C", "Java"],
 			bgColor: "bg-green-50",
 			borderColor: "border-green-300",
 		},
