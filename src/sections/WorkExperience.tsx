@@ -17,7 +17,7 @@ const WorkExperienceContent = ({
 	descriptions,
 }: WorkExperienceContentProps) => (
 	<div>
-		<h3 className="text-xl font-semibold">{jobTitle}</h3>
+		<h3 className="text-lg font-semibold">{jobTitle}</h3>
 		<p className="text-gray-600">{company}</p>
 		<p className="text-gray-600">{duration}</p>
 		<ol className="mt-2 text-gray-700 list-disc">
