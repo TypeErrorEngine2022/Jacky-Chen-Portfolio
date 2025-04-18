@@ -9,11 +9,23 @@ const AtgPartTimeWorkingExperience = () => (
 		</h3>
 		<p className="text-gray-600">Sep 2023 - Present</p>
 		<ol className="mt-2 text-gray-700 list-disc">
-			<li>Revamp over 20 Vue components to React with documented QA</li>
-			<li>Took the initiative to develop a swagger compare tool to facilitate API upgrades</li>
-			<li>Upgrade over 50 API endpoints with detailed changelog</li>
 			<li>
-				Design and implement printable pagination of 10 different financial documents using React
+				Revamp <strong>20+</strong> Vue components to React with documented QA
+			</li>
+			<li>Took the initiative to develop a swagger compare tool to facilitate API upgrades</li>
+			<li>
+				Upgrade <strong>50+</strong> API endpoints with detailed changelog
+			</li>
+			<li>
+				Design and implement printable pagination of <strong>10</strong> different financial
+				documents using React
+			</li>
+			<li>
+				Reduced <strong>40%</strong> API calls in React through optimizing state management
+			</li>
+			<li>
+				Developed robust SignalR auto-reconnect logic, eliminating <strong>80%</strong> of user
+				interruptions
 			</li>
 		</ol>
 	</div>
@@ -27,7 +39,9 @@ const AtgInternWorkingExperience = () => (
 			<li>
 				Developed a responsive and scalable periodontal chart with React in the summer internship
 			</li>
-			<li>Assisted the transition to REST API using NestJS and TypeORM</li>
+			<li>
+				Migrated <strong>5+</strong> APIs to REST architecture using NestJS and TypeORM
+			</li>
 		</ol>
 	</div>
 );
