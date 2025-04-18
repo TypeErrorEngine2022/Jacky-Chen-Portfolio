@@ -1,5 +1,6 @@
 import { Button, Space } from "antd";
 import { GithubOutlined, LinkedinOutlined, MailOutlined } from "@ant-design/icons";
+import { SiLeetcode } from "react-icons/si";
 
 const Contact: React.FC = () => (
 	<section id="get-in-touch" className="py-12 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto">
@@ -26,6 +27,15 @@ const Contact: React.FC = () => (
 					className="text-lg"
 				>
 					LinkedIn
+				</Button>
+				<Button
+					type="link"
+					href="https://leetcode.com/u/yipAtCS/"
+					target="_blank"
+					icon={<SiLeetcode />}
+					className="text-lg"
+				>
+					Leetcode
 				</Button>
 			</Space>
 		</div>
