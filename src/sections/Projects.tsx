@@ -71,7 +71,7 @@ const ProjectCard = ({ title, duration, description, images, link }: ProjectCard
 		{images &&
 			images.length > 0 &&
 			images.map((image) => (
-				<div className="mt-4">
+				<div key={`${title} - ${image.alt}`} className="mt-4">
 					<ImageWithPlaceholder
 						src={image.src}
 						alt={`${title} - ${image.alt}`}
