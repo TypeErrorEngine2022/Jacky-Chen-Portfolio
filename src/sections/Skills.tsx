@@ -1,4 +1,4 @@
-import { JSX } from "react";
+import { IconType } from "react-icons";
 import {
 	FaReact,
 	FaVuejs,
@@ -29,44 +29,11 @@ import {
 	SiMongodb,
 	SiLinux,
 	SiElectron,
+	SiJira,
 } from "react-icons/si";
 
 const Skills: React.FC = () => {
-	const getSkillIcon = (skill: string) => {
-		const iconProps = { className: "text-2xl mr-2" };
-		const iconMap: Record<string, JSX.Element> = {
-			TypeScript: <SiTypescript {...iconProps} />,
-			React: <FaReact {...iconProps} />,
-			"Vue.js": <FaVuejs {...iconProps} />,
-			Python: <FaPython {...iconProps} />,
-			Java: <FaJava {...iconProps} />,
-			"Next.js": <SiNextdotjs {...iconProps} />,
-			"Ant Design": <SiAntdesign {...iconProps} />,
-			HTML: <FaHtml5 {...iconProps} />,
-			CSS: <FaCss3Alt {...iconProps} />,
-			"Node.js": <FaNodeJs {...iconProps} />,
-			"C++": <SiCplusplus {...iconProps} />,
-			C: <SiC {...iconProps} />,
-			Git: <FaGitAlt {...iconProps} />,
-			Rust: <FaRust {...iconProps} />,
-			"Native Android": <FaAndroid {...iconProps} />,
-			Django: <SiDjango {...iconProps} />,
-			"Spring Boot": <SiSpringboot {...iconProps} />,
-			Docker: <FaDocker {...iconProps} />,
-			Jest: <SiJest {...iconProps} />,
-			Solidity: <SiSolidity {...iconProps} />,
-			Kotlin: <SiKotlin {...iconProps} />,
-			Go: <SiGo {...iconProps} />,
-			PostgreSQL: <SiPostgresql {...iconProps} />,
-			MongoDB: <SiMongodb {...iconProps} />,
-			Linux: <SiLinux {...iconProps} />,
-			Electron: <SiElectron {...iconProps} />,
-			AWS: <FaAws {...iconProps} />,
-		};
-
-		return iconMap[skill] || null;
-	};
-
+	// Define all skill categories first
 	const skillCategories = [
 		{
 			title: "Experienced (>= 2 years)",
@@ -80,6 +47,7 @@ const Skills: React.FC = () => {
 				"Git",
 				"Next.js",
 				"Ant Design",
+				"Jira",
 			],
 			bgColor: "bg-blue-50",
 			borderColor: "border-blue-300",
@@ -94,13 +62,12 @@ const Skills: React.FC = () => {
 			title: "Entry-level (< 1 year)",
 			skills: [
 				"Rust",
-				"Django",
-				"Spring Boot",
+				"Go",
 				"Docker",
 				"Jest",
+				"Django",
 				"Solidity",
 				"Kotlin",
-				"Go",
 				"PostgreSQL",
 				"MongoDB",
 				"Linux",
@@ -111,6 +78,51 @@ const Skills: React.FC = () => {
 			borderColor: "border-amber-300",
 		},
 	];
+
+	// Generate a set of all unique skills
+	const allSkills = new Set<string>();
+	skillCategories.forEach((category) => {
+		category.skills.forEach((skill) => allSkills.add(skill));
+	});
+
+	// Create an icon map only for the skills we're using
+	const iconMap: Record<string, IconType> = {
+		TypeScript: SiTypescript,
+		React: FaReact,
+		"Vue.js": FaVuejs,
+		Python: FaPython,
+		Java: FaJava,
+		"Next.js": SiNextdotjs,
+		"Ant Design": SiAntdesign,
+		HTML: FaHtml5,
+		CSS: FaCss3Alt,
+		"Node.js": FaNodeJs,
+		"C++": SiCplusplus,
+		C: SiC,
+		Git: FaGitAlt,
+		Rust: FaRust,
+		"Native Android": FaAndroid,
+		Django: SiDjango,
+		"Spring Boot": SiSpringboot,
+		Docker: FaDocker,
+		Jest: SiJest,
+		Solidity: SiSolidity,
+		Kotlin: SiKotlin,
+		Go: SiGo,
+		PostgreSQL: SiPostgresql,
+		MongoDB: SiMongodb,
+		Linux: SiLinux,
+		Electron: SiElectron,
+		AWS: FaAws,
+		Jira: SiJira,
+	};
+
+	const getSkillIcon = (skill: string) => {
+		const iconProps = { className: "text-2xl mr-2" };
+		const Icon = iconMap[skill];
+
+		return Icon ? <Icon {...iconProps} /> : null;
+	};
 
 	return (
 		<section id="skills" className="py-10 sm:py-12 px-4 sm:px-6 max-w-5xl mx-auto">
