@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Card } from "antd";
+import SectionContainer from "../components/SectionContainer";
 
 interface ProjectCardProps {
 	title: string;
@@ -98,7 +99,7 @@ const projects: ProjectCardProps[] = [
 ];
 
 const Projects: React.FC = () => (
-	<section id="projects" className="py-12 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto bg-gray-50">
+	<SectionContainer id="projects" bgColor="bg-gray-50">
 		<h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800">Projects</h2>
 		<div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
 			{projects.map((project, idx) => {
@@ -110,7 +111,7 @@ const Projects: React.FC = () => (
 				);
 			})}
 		</div>
-	</section>
+	</SectionContainer>
 );
 
 export default Projects;

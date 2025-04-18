@@ -14,10 +14,10 @@ import React from "react";
 const { Content } = Layout;
 
 const App: React.FC = () => (
-	<Layout className="min-h-screen w-full">
-		<Layout>
+	<Layout className="h-[100dvh] w-[100dvw] overflow-x-hidden">
+		<Layout className="w-full overflow-x-hidden">
 			<Header />
-			<Content className="w-full pt-16">
+			<Content className="w-full max-w-[100dvw] pt-[var(--header-height)] overflow-x-hidden">
 				<Hero />
 				<About />
 				<Skills />
@@ -26,8 +26,8 @@ const App: React.FC = () => (
 				<Projects />
 				<Explorations />
 				<Contact />
+				<Footer />
 			</Content>
-			<Footer />
 		</Layout>
 	</Layout>
 );

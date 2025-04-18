@@ -1,6 +1,7 @@
 import { Card, Tag, Timeline } from "antd";
 import { PropsWithChildren } from "react";
 import GitHubCalendar from "react-github-calendar";
+import SectionContainer from "../components/SectionContainer";
 
 const AtgPartTimeWorkingExperience = () => (
 	<div>
@@ -58,7 +59,7 @@ const WorkingExperienceCard = ({
 );
 
 const WorkExperience: React.FC = () => (
-	<section id="work" className="py-12 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto">
+	<SectionContainer id="work">
 		<h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-8 sm:mb-10">
 			Work Experience
 		</h2>
@@ -93,7 +94,7 @@ const WorkExperience: React.FC = () => (
 		<div className="flex justify-center mt-4">
 			<GitHubCalendar username="TypeErrorEngine2022" />
 		</div>
-	</section>
+	</SectionContainer>
 );
 
 export default WorkExperience;

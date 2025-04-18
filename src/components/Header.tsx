@@ -77,7 +77,7 @@ const Header: React.FC = () => {
 			{/* Mobile Menu Dropdown */}
 			{!collapsed && (
 				<div className="fixed top-[var(--header-height)] inset-0 bg-white z-50 flex flex-col mobile-menu">
-					<div className="flex flex-col justify-evenly h-full items-center pt-4 pb-16">
+					<div className="flex flex-col justify-evenly h-[calc(100dvh-var(--header-height))] items-center pt-4 pb-16">
 						{headerItems.map((item) => (
 							<a
 								key={item.key}

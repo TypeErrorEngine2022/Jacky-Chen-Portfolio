@@ -1,5 +1,7 @@
+import SectionContainer from "../components/SectionContainer";
+
 const About: React.FC = () => (
-	<section id="about" className="py-12 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto">
+	<SectionContainer id="about">
 		<h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800">About Me</h2>
 		<div className="mt-6 sm:mt-8 max-w-3xl mx-auto">
 			<p className="text-base sm:text-lg text-gray-600 leading-relaxed">
@@ -9,7 +11,7 @@ const About: React.FC = () => (
 				team member.
 			</p>
 		</div>
-	</section>
+	</SectionContainer>
 );
 
 export default About;

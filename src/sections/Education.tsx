@@ -1,8 +1,9 @@
 import { Card } from "antd";
 import React from "react";
+import SectionContainer from "../components/SectionContainer";
 
 const Education: React.FC = () => (
-	<section id="education" className="py-12 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto">
+	<SectionContainer id="education">
 		<h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-8 sm:mb-10">
 			Education
 		</h2>
@@ -39,7 +40,7 @@ const Education: React.FC = () => (
 				</div>
 			</div>
 		</Card>
-	</section>
+	</SectionContainer>
 );
 
 export default Education;

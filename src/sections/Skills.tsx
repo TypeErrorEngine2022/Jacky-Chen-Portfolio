@@ -32,6 +32,7 @@ import {
 	SiJira,
 	SiFigma,
 } from "react-icons/si";
+import SectionContainer from "../components/SectionContainer";
 
 const Skills: React.FC = () => {
 	// Define all skill categories first
@@ -127,7 +128,7 @@ const Skills: React.FC = () => {
 	};
 
 	return (
-		<section id="skills" className="py-10 sm:py-12 px-4 sm:px-6 max-w-5xl mx-auto">
+		<SectionContainer id="skills">
 			<h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-6">Skills</h2>
 
 			<div className="space-y-6">
@@ -151,7 +152,7 @@ const Skills: React.FC = () => {
 					</div>
 				))}
 			</div>
-		</section>
+		</SectionContainer>
 	);
 };
 

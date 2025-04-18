@@ -1,6 +1,7 @@
 import React from "react";
 import { GiBoxingGlove, GiTennisRacket, GiShuttlecock } from "react-icons/gi";
 import { FaRegStar, FaAmericanSignLanguageInterpreting, FaRunning } from "react-icons/fa";
+import SectionContainer from "../components/SectionContainer";
 
 interface Exploration {
 	name: string;
@@ -47,7 +48,7 @@ const Explorations: React.FC = () => {
 	];
 
 	return (
-		<section id="explorations" className="py-10 sm:py-12 px-4 sm:px-6 max-w-5xl mx-auto">
+		<SectionContainer id="explorations">
 			<h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-6">
 				Explorations
 			</h2>
@@ -71,7 +72,7 @@ const Explorations: React.FC = () => {
 					</div>
 				))}
 			</div>
-		</section>
+		</SectionContainer>
 	);
 };
 

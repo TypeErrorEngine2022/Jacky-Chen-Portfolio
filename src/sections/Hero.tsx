@@ -1,7 +1,7 @@
 const Hero: React.FC = () => (
 	<section
 		id="hero"
-		className="min-h-[calc(100vh-var(--header-height))] flex flex-col items-center justify-center bg-gray-100 px-4 sm:px-6 relative"
+		className="min-h-[calc(100dvh-var(--header-height))] flex flex-col items-center justify-center bg-gray-100 px-4 sm:px-6 relative"
 	>
 		<div className="text-center max-w-3xl mx-auto">
 			<h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 leading-tight">

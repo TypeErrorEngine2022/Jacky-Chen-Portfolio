@@ -1,15 +1,16 @@
-import { Button, Space } from "antd";
+import { Button } from "antd";
 import { GithubOutlined, LinkedinOutlined, MailOutlined } from "@ant-design/icons";
 import { SiLeetcode } from "react-icons/si";
+import SectionContainer from "../components/SectionContainer";
 
 const Contact: React.FC = () => (
-	<section id="get-in-touch" className="py-12 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto">
+	<SectionContainer id="get-in-touch" className="overflow-x-hidden">
 		<h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800">Get in Touch</h2>
 		<div className="mt-8 text-center">
-			<p className="text-lg text-gray-600 flex items-center justify-center gap-2">
+			<p className="text-lg text-gray-600 flex items-center justify-center gap-2 flex-wrap">
 				<MailOutlined /> jackychenworkcontact@gmail.com
 			</p>
-			<Space className="mt-4" size="large">
+			<div className="mt-4 flex items-center justify-center gap-4 flex-wrap">
 				<Button
 					type="link"
 					href="https://github.com/TypeErrorEngine2022"
@@ -37,9 +38,9 @@ const Contact: React.FC = () => (
 				>
 					Leetcode
 				</Button>
-			</Space>
+			</div>
 		</div>
-	</section>
+	</SectionContainer>
 );
 
 export default Contact;
