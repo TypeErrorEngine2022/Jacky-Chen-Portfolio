@@ -70,7 +70,7 @@ const Header: React.FC = () => {
 				</Col>
 
 				{/* Desktop Menu */}
-				<Col xs={0} sm={9}>
+				<Col xs={0} sm={11}>
 					<Menu
 						mode="horizontal"
 						items={headerItems.map((item) => ({
