@@ -56,7 +56,14 @@ const Header: React.FC = () => {
 			<Row className="px-12 py-2 w-full h-full" justify="space-between" align="middle">
 				<Col flex="auto">
 					<div className="flex items-center">
-						<img src="/sun.jpg" alt="Logo" className="h-8 w-8 rounded-full mr-2" />
+						<img
+							src="/images/sun-32.webp"
+							srcSet="/images/sun-32.webp 1x, /images/sun-96.webp 3x"
+							alt="Logo"
+							className="h-8 w-8 rounded-full mr-2"
+							width="32"
+							height="32"
+						/>
 						<div className="text-2xl font-bold">Jacky Chen</div>
 					</div>
 				</Col>
