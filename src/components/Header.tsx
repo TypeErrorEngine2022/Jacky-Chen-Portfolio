@@ -28,15 +28,7 @@ const Header: React.FC = () => {
 		};
 	}, [collapsed]);
 
-	// Close mobile menu when clicking outside
 	useEffect(() => {
-		const handleClickOutside = (event: MouseEvent) => {
-			const target = event.target as HTMLElement;
-			if (!target.closest(".mobile-menu") && !target.closest(".menu-toggle")) {
-				setCollapsed(true);
-			}
-		};
-
 		const handleScroll = () => {
 			const isScrolled = window.scrollY > 10;
 			if (isScrolled !== scrolled) {
@@ -44,11 +36,8 @@ const Header: React.FC = () => {
 			}
 		};
 
-		document.addEventListener("click", handleClickOutside);
 		window.addEventListener("scroll", handleScroll);
-
 		return () => {
-			document.removeEventListener("click", handleClickOutside);
 			window.removeEventListener("scroll", handleScroll);
 		};
 	}, [scrolled]);
@@ -80,7 +69,6 @@ const Header: React.FC = () => {
 					/>
 				</Col>
 
-				{/* Mobile Menu Toggle - positioned in the same place as desktop menu */}
 				<Col className="menu-toggle flex justify-end" xs={2} sm={0}>
 					<MenuOutlined onClick={toggleMenu} className="text-2xl cursor-pointer" />
 				</Col>
