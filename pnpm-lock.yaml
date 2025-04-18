@@ -16,13 +16,16 @@ importers:
         version: 4.1.3(vite@6.2.5(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.7.1))
       antd:
         specifier: ^5.24.6
-        version: 5.24.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 5.24.6(date-fns@4.1.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react:
         specifier: ^19.0.0
         version: 19.1.0
       react-dom:
         specifier: ^19.0.0
         version: 19.1.0(react@19.1.0)
+      react-github-calendar:
+        specifier: ^4.5.6
+        version: 4.5.6(react@19.1.0)
       react-icons:
         specifier: ^5.5.0
         version: 5.5.0(react@19.1.0)
@@ -906,6 +909,9 @@ packages:
   data-view-byte-offset@1.0.1:
     resolution: {integrity: sha512-BS8PfmtDGnrgYdOonGZQdLZslWIeCGFP9tpan0hi1Co2Zr2NKADsvGYA8XxuG/4UWgJ6Cjtv+YJnB6MM69QGlQ==}
     engines: {node: '>= 0.4'}
+
+  date-fns@4.1.0:
+    resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
 
   dayjs@1.11.13:
     resolution: {integrity: sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==}
@@ -1809,10 +1815,25 @@ packages:
       react: '>=16.9.0'
       react-dom: '>=16.9.0'
 
+  react-activity-calendar@2.7.10:
+    resolution: {integrity: sha512-O6ev2JxbsbmF7hPpRCkiXxQ+vGwXS5iUVwOCqtvlJnGhpyJ3ZJap7/qfIZA0WZcDj4gpQh2Dcvkmwh3yBXRrPQ==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0
+
   react-dom@19.1.0:
     resolution: {integrity: sha512-Xs1hdnE+DyKgeHJeJznQmYMIBG3TKIHJJT95Q58nHLSrElKlGQqDTR2HQ9fx5CN/Gk6Vh/kupBTDLU11/nDk/g==}
     peerDependencies:
       react: ^19.1.0
+
+  react-error-boundary@5.0.0:
+    resolution: {integrity: sha512-tnjAxG+IkpLephNcePNA7v6F/QpWLH8He65+DmedchDwg162JZqx4NmbXj0mlAYVVEd81OW7aFhmbsScYfiAFQ==}
+    peerDependencies:
+      react: '>=16.13.1'
+
+  react-github-calendar@4.5.6:
+    resolution: {integrity: sha512-wuLJ+4MDBnli+YWUCprmK+e4ltRaMaB1P4VnYCrbATzFUq46ZDvrXbjQ8uf5aXPbWW8X+ZzSBgGOXGDWgkl0Sw==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0
 
   react-icons@5.5.0:
     resolution: {integrity: sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==}
@@ -2793,7 +2814,7 @@ snapshots:
     dependencies:
       color-convert: 2.0.1
 
-  antd@5.24.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  antd@5.24.6(date-fns@4.1.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       '@ant-design/colors': 7.2.0
       '@ant-design/cssinjs': 1.23.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -2825,7 +2846,7 @@ snapshots:
       rc-motion: 2.9.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       rc-notification: 5.6.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       rc-pagination: 5.1.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      rc-picker: 4.11.3(dayjs@1.11.13)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      rc-picker: 4.11.3(date-fns@4.1.0)(dayjs@1.11.13)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       rc-progress: 4.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       rc-rate: 2.13.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       rc-resize-observer: 1.4.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -3005,6 +3026,8 @@ snapshots:
       call-bound: 1.0.4
       es-errors: 1.3.0
       is-data-view: 1.0.2
+
+  date-fns@4.1.0: {}
 
   dayjs@1.11.13: {}
 
@@ -3924,7 +3947,7 @@ snapshots:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
-  rc-picker@4.11.3(dayjs@1.11.13)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  rc-picker@4.11.3(date-fns@4.1.0)(dayjs@1.11.13)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       '@babel/runtime': 7.27.0
       '@rc-component/trigger': 2.2.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -3935,6 +3958,7 @@ snapshots:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
     optionalDependencies:
+      date-fns: 4.1.0
       dayjs: 1.11.13
 
   rc-progress@4.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
@@ -4093,10 +4117,26 @@ snapshots:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
+  react-activity-calendar@2.7.10(react@19.1.0):
+    dependencies:
+      date-fns: 4.1.0
+      react: 19.1.0
+
   react-dom@19.1.0(react@19.1.0):
     dependencies:
       react: 19.1.0
       scheduler: 0.26.0
+
+  react-error-boundary@5.0.0(react@19.1.0):
+    dependencies:
+      '@babel/runtime': 7.27.0
+      react: 19.1.0
+
+  react-github-calendar@4.5.6(react@19.1.0):
+    dependencies:
+      react: 19.1.0
+      react-activity-calendar: 2.7.10(react@19.1.0)
+      react-error-boundary: 5.0.0(react@19.1.0)
 
   react-icons@5.5.0(react@19.1.0):
     dependencies:

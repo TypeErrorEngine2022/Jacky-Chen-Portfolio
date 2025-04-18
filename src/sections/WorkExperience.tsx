@@ -1,5 +1,6 @@
 import { Card, Tag, Timeline } from "antd";
 import { PropsWithChildren } from "react";
+import GitHubCalendar from "react-github-calendar";
 
 const AtgPartTimeWorkingExperience = () => (
 	<div>
@@ -73,6 +74,10 @@ const WorkExperience: React.FC = () => (
 			<WorkingExperienceCard color="gray">
 				<AtgInternWorkingExperience />
 			</WorkingExperienceCard>
+		</div>
+
+		<div className="flex justify-center mt-4">
+			<GitHubCalendar username="TypeErrorEngine2022" />
 		</div>
 	</section>
 );
