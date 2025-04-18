@@ -7,6 +7,7 @@ import Skills from "./sections/Skills";
 import WorkExperience from "./sections/WorkExperience";
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
+import Education from "./sections/Education";
 import React from "react";
 
 const { Content } = Layout;
@@ -20,6 +21,7 @@ const App: React.FC = () => (
 				<About />
 				<Skills />
 				<WorkExperience />
+				<Education />
 				<Projects />
 				<Contact />
 			</Content>

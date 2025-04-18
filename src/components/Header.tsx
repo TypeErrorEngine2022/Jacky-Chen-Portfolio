@@ -6,6 +6,7 @@ const headerItems = [
 	{ key: "About", label: "About", href: "#about" },
 	{ key: "Skills", label: "Skills", href: "#skills" },
 	{ key: "Work", label: "Work", href: "#work" },
+	{ key: "Education", label: "Education", href: "#education" },
 	{ key: "Projects", label: "Projects", href: "#projects" },
 	{ key: "GetInTouch", label: "Get In Touch", href: "#get-in-touch" },
 ];
@@ -68,7 +69,7 @@ const Header: React.FC = () => {
 				</Col>
 
 				{/* Desktop Menu */}
-				<Col xs={0} sm={8}>
+				<Col xs={0} sm={9}>
 					<Menu
 						mode="horizontal"
 						items={headerItems.map((item) => ({
