@@ -55,7 +55,10 @@ const Header: React.FC = () => {
 		>
 			<Row className="px-12 py-2 w-full h-full" justify="space-between" align="middle">
 				<Col flex="auto">
-					<div className="text-2xl font-bold">Jacky Chen</div>
+					<div className="flex items-center">
+						<img src="/sun.jpg" alt="Logo" className="h-8 w-8 rounded-full mr-2" />
+						<div className="text-2xl font-bold">Jacky Chen</div>
+					</div>
 				</Col>
 
 				{/* Desktop Menu */}
