@@ -2,9 +2,29 @@ import { Menu } from "antd";
 import { useState, useEffect } from "react";
 import { MenuOutlined } from "@ant-design/icons";
 
+const headerItems = [
+	{ key: "About", label: "About", href: "#about" },
+	{ key: "Skills", label: "Skills", href: "#skills" },
+	{ key: "Work", label: "Work", href: "#work" },
+	{ key: "Projects", label: "Projects", href: "#projects" },
+	{ key: "Contact", label: "Contact", href: "#contact" },
+];
+
 const Header: React.FC = () => {
 	const [collapsed, setCollapsed] = useState(true);
 	const [scrolled, setScrolled] = useState(false);
+
+	useEffect(() => {
+		if (!collapsed) {
+			document.body.style.overflow = "hidden";
+		} else {
+			document.body.style.overflow = "";
+		}
+
+		return () => {
+			document.body.style.overflow = "";
+		};
+	}, [collapsed]);
 
 	// Close mobile menu when clicking outside
 	useEffect(() => {
@@ -15,7 +35,6 @@ const Header: React.FC = () => {
 			}
 		};
 
-		// Add scroll event listener to add shadow on scroll
 		const handleScroll = () => {
 			const isScrolled = window.scrollY > 10;
 			if (isScrolled !== scrolled) {
@@ -43,85 +62,47 @@ const Header: React.FC = () => {
 				scrolled ? "shadow-md" : ""
 			}`}
 		>
-			<div className="max-w-5xl mx-auto px-4 flex items-center justify-between py-4">
-				<div className="text-2xl font-bold mr-5">Jacky Chen</div>
-				{/* Desktop Menu */}
-				<div className="w-fit hidden sm:flex">
-					<Menu
-						className="w-full"
-						mode="horizontal"
-						items={[
-							{ key: "home", label: <a href="#hero">Home</a> },
-							{ key: "about", label: <a href="#about">About</a> },
-							{ key: "skills", label: <a href="#skills">Skills</a> },
-							{ key: "work", label: <a href="#work">Work</a> },
-							{ key: "projects", label: <a href="#projects">Projects</a> },
-							{ key: "contact", label: <a href="#contact">Contact</a> },
-						]}
-					/>
-				</div>
+			<div className="px-12 py-4 flex items-center justify-between">
+				<div className="text-2xl font-bold mr-5 w-max flex-grow">Jacky Chen</div>
 				{/* Mobile Menu Toggle */}
 				<div className="menu-toggle sm:hidden">
 					<MenuOutlined onClick={toggleMenu} className="text-2xl cursor-pointer" />
 				</div>
+
+				{/* Desktop Menu */}
+				<div className="w-fit hidden sm:flex">
+					<Menu
+						className="w-fit"
+						mode="horizontal"
+						items={headerItems.map((item) => ({
+							key: item.key,
+							label: <a href={item.href}>{item.label}</a>,
+						}))}
+					/>
+				</div>
+
+				{/* Mobile Menu Dropdown */}
+				{!collapsed && (
+					<div className="fixed inset-0 bg-white z-50 flex flex-col mobile-menu">
+						<div className="px-12 py-4 flex items-center justify-between border-b border-slate-200">
+							<div className="text-2xl font-bold mr-5">Jacky Chen</div>
+							<MenuOutlined onClick={toggleMenu} className="text-2xl cursor-pointer" />
+						</div>
+						<div className="flex flex-col justify-evenly h-full items-center pt-4 pb-16">
+							{headerItems.map((item) => (
+								<a
+									key={item.key}
+									href={item.href}
+									onClick={toggleMenu}
+									className="text-2xl py-4 hover:text-blue-500 transition-colors"
+								>
+									{item.label}
+								</a>
+							))}
+						</div>
+					</div>
+				)}
 			</div>
-			{/* Mobile Menu Dropdown */}
-			{!collapsed && (
-				<Menu
-					mode="vertical"
-					className="bg-white border-t mobile-menu max-h-[calc(100vh-60px)] overflow-y-auto"
-					items={[
-						{
-							key: "home",
-							label: (
-								<a href="#hero" onClick={toggleMenu}>
-									Home
-								</a>
-							),
-						},
-						{
-							key: "about",
-							label: (
-								<a href="#about" onClick={toggleMenu}>
-									About
-								</a>
-							),
-						},
-						{
-							key: "skills",
-							label: (
-								<a href="#skills" onClick={toggleMenu}>
-									Skills
-								</a>
-							),
-						},
-						{
-							key: "work",
-							label: (
-								<a href="#work" onClick={toggleMenu}>
-									Work
-								</a>
-							),
-						},
-						{
-							key: "projects",
-							label: (
-								<a href="#projects" onClick={toggleMenu}>
-									Projects
-								</a>
-							),
-						},
-						{
-							key: "contact",
-							label: (
-								<a href="#contact" onClick={toggleMenu}>
-									Contact
-								</a>
-							),
-						},
-					]}
-				/>
-			)}
 		</nav>
 	);
 };
