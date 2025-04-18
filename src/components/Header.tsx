@@ -7,7 +7,7 @@ const headerItems = [
 	{ key: "Skills", label: "Skills", href: "#skills" },
 	{ key: "Work", label: "Work", href: "#work" },
 	{ key: "Projects", label: "Projects", href: "#projects" },
-	{ key: "Contact", label: "Get In Touch", href: "#contact" },
+	{ key: "GetInTouch", label: "Get In Touch", href: "#get-in-touch" },
 ];
 
 const Header: React.FC = () => {
