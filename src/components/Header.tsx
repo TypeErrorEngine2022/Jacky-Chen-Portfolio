@@ -58,11 +58,11 @@ const Header: React.FC = () => {
 
 	return (
 		<nav
-			className={`bg-white fixed w-full z-10 transition-shadow duration-300 ${
+			className={`bg-white h-[8vh] fixed w-full z-10 transition-shadow duration-300 ${
 				scrolled ? "shadow-md" : ""
 			}`}
 		>
-			<Row className="px-12 py-4" justify="space-between" align="middle">
+			<Row className="px-12 py-2 w-full h-full" justify="space-between" align="middle">
 				<Col flex="auto">
 					<div className="text-2xl font-bold">Jacky Chen</div>
 				</Col>
@@ -86,17 +86,7 @@ const Header: React.FC = () => {
 
 			{/* Mobile Menu Dropdown */}
 			{!collapsed && (
-				<div className="fixed inset-0 bg-white z-50 flex flex-col mobile-menu">
-					<Row className="px-12 py-4" justify="space-between" align="middle">
-						<Col flex="auto">
-							<div className="text-2xl font-bold">Jacky Chen</div>
-						</Col>
-
-						{/* Mobile Menu Toggle - positioned in the same place as desktop menu */}
-						<Col className="menu-toggle flex justify-end" xs={2} sm={0}>
-							<MenuOutlined onClick={toggleMenu} className="text-2xl cursor-pointer" />
-						</Col>
-					</Row>
+				<div className="fixed top-[8vh] inset-0 bg-white z-50 flex flex-col mobile-menu">
 					<div className="flex flex-col justify-evenly h-full items-center pt-4 pb-16">
 						{headerItems.map((item) => (
 							<a
