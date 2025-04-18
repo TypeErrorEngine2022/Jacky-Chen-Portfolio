@@ -11,12 +11,9 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
 	id,
 	children,
 	className = "",
-	bgColor = "bg-white",
+	bgColor = "",
 }) => (
-	<section
-		id={id}
-		className={`py-12 sm:py-16 px-4 sm:px-6 max-w-5xl mx-auto ${bgColor} ${className}`}
-	>
+	<section id={id} className={`p-6 sm:px-6 max-w-5xl mx-auto ${bgColor} ${className}`}>
 		{children}
 	</section>
 );

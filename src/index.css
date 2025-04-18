@@ -19,8 +19,6 @@
 }
 
 html {
-  scroll-padding-top: var(--header-height);
-  scroll-behavior: smooth;
   width: 100dvw;
   overflow-x: hidden;
 }

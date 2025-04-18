@@ -16,23 +16,24 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 const { Content } = Layout;
 
 const App: React.FC = () => (
-	<Layout className="h-[100dvh] w-[100dvw] overflow-x-hidden">
-		<Layout className="w-full overflow-x-hidden">
-			<Header />
-			<Content className="w-full max-w-[100dvw] pt-[var(--header-height)] overflow-x-hidden">
-				<Hero />
-				<About />
-				<Skills />
-				<WorkExperience />
-				<Education />
-				<Projects />
-				<Explorations />
-				<Contact />
-				<Footer />
-				<Analytics />
-				<SpeedInsights />
-			</Content>
-		</Layout>
+	<Layout className="h-[100dvh] w-[100dvw] overflow-x-hidden scroll-smooth">
+		<Header />
+		<Content
+			className="w-full max-w-[100dvw] pt-[var(--header-height)] overflow-x-hidden scroll-smooth"
+			style={{ scrollPaddingTop: "calc(var(--header-height) + 1rem)" }}
+		>
+			<Hero />
+			<About />
+			<Skills />
+			<WorkExperience />
+			<Education />
+			<Projects />
+			<Explorations />
+			<Contact />
+			<Footer />
+			<Analytics />
+			<SpeedInsights />
+		</Content>
 	</Layout>
 );
 
