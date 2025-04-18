@@ -7,7 +7,7 @@ const headerItems = [
 	{ key: "Skills", label: "Skills", href: "#skills" },
 	{ key: "Work", label: "Work", href: "#work" },
 	{ key: "Projects", label: "Projects", href: "#projects" },
-	{ key: "Contact", label: "Contact", href: "#contact" },
+	{ key: "Contact", label: "Get In Touch", href: "#contact" },
 ];
 
 const Header: React.FC = () => {
@@ -58,7 +58,7 @@ const Header: React.FC = () => {
 
 	return (
 		<nav
-			className={`bg-white h-[8vh] fixed w-full z-10 transition-shadow duration-300 ${
+			className={`bg-white h-[var(--header-height)] fixed w-full z-10 transition-shadow duration-300 ${
 				scrolled ? "shadow-md" : ""
 			}`}
 		>
@@ -86,7 +86,7 @@ const Header: React.FC = () => {
 
 			{/* Mobile Menu Dropdown */}
 			{!collapsed && (
-				<div className="fixed top-[8vh] inset-0 bg-white z-50 flex flex-col mobile-menu">
+				<div className="fixed top-[var(--header-height)] inset-0 bg-white z-50 flex flex-col mobile-menu">
 					<div className="flex flex-col justify-evenly h-full items-center pt-4 pb-16">
 						{headerItems.map((item) => (
 							<a
