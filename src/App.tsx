@@ -10,6 +10,8 @@ import Contact from "./sections/Contact";
 import Education from "./sections/Education";
 import Explorations from "./sections/Explorations";
 import React from "react";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const { Content } = Layout;
 
@@ -27,6 +29,8 @@ const App: React.FC = () => (
 				<Explorations />
 				<Contact />
 				<Footer />
+				<Analytics />
+				<SpeedInsights />
 			</Content>
 		</Layout>
 	</Layout>
