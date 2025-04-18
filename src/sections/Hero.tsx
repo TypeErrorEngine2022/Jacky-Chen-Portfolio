@@ -1,7 +1,7 @@
 const Hero: React.FC = () => (
 	<section
 		id="hero"
-		className="min-h-[100vh] flex flex-col items-center justify-center bg-gray-100 px-4 sm:px-6 relative"
+		className="min-h-[calc(100vh-var(--header-height))] flex flex-col items-center justify-center bg-gray-100 px-4 sm:px-6 relative"
 	>
 		<div className="text-center max-w-3xl mx-auto">
 			<h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 leading-tight">
@@ -11,7 +11,7 @@ const Hero: React.FC = () => (
 				A software engineer with over 1.5 years of experience in web development.
 			</p>
 		</div>
-		<div className="mt-12 animate-bounce cursor-pointer">
+		<div className="absolute bottom-20 animate-bounce cursor-pointer">
 			<a href="#about" aria-label="Scroll down">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
