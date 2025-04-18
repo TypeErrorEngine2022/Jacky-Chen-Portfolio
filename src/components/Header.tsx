@@ -7,6 +7,7 @@ const headerItems = [
 	{ key: "Skills", label: "Skills", href: "#skills" },
 	{ key: "Work", label: "Work", href: "#work" },
 	{ key: "Education", label: "Education", href: "#education" },
+	{ key: "Explorations", label: "Explorations", href: "#explorations" },
 	{ key: "Projects", label: "Projects", href: "#projects" },
 	{ key: "GetInTouch", label: "Get In Touch", href: "#get-in-touch" },
 ];
